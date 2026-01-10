@@ -1,0 +1,203 @@
+PROJECT CONTEXT: EVENT MANAGEMENT WEB APP
+
+OVERVIEW
+This is a mobile-first internal event management web application built for a small team (2–3 internal users).
+The application is used to manage event bookings, customers, schedules, and payment status.
+
+The app is NOT customer-facing.
+Only authenticated internal users can access the system.
+
+TECH STACK
+- Frontend Framework: Next.js (App Router)
+- Backend / Database / Auth: Supabase
+- Hosting & Deployment: Vercel
+- Styling: Mobile-first responsive UI (Tailwind CSS)
+- Target Devices: Mobile-first (primary), Tablet & Desktop secondary
+
+AUTHENTICATION
+- Authentication handled using Supabase Auth
+- Only 2–3 internal users
+- No public signup
+- Users are created manually in Supabase dashboard
+- Email + password authentication
+- All users have the same permissions
+
+CORE DATA STRUCTURE
+
+1. CUSTOMER MASTER
+Used to store repeat customers.
+
+Fields:
+- id (UUID, primary key)
+- name
+- phone
+- email (optional)
+- notes (optional)
+- created_at
+
+2. EVENT TYPE MASTER
+Defines types of events.
+
+Fields:
+- id (UUID, primary key)
+- name (e.g., Marriage, Birthday, Engagement, Corporate Event)
+- description (optional)
+- created_at
+
+3. EVENT BOOKINGS (EVENT ORDERS)
+Each record represents one booked event.
+
+Fields:
+- id (UUID, primary key)
+- customer_id (foreign key → customer)
+- event_type_id (foreign key → event type)
+- title / short description
+- start_date
+- end_date
+- start_time
+- end_time
+- location
+- total_price
+- payment_status (boolean)
+  - false = Pending
+  - true = Paid
+- images (array of image URLs from Supabase Storage, optional)
+- notes (optional)
+- created_at
+- updated_at
+
+VALIDATION & BUSINESS RULES
+
+DATE & TIME VALIDATION
+- Events can span multiple days (start_date → end_date)
+- Multiple events CAN exist on the same day
+- Events CANNOT overlap in time on the same date
+
+Conflict Rules:
+- If two events share at least one common date:
+  - Their time ranges must NOT overlap
+- While creating or editing an event:
+  - The system must check existing events
+  - If conflict is detected, show a clear error message
+  - UI should visually indicate unavailable time slots
+
+PAYMENT VALIDATION
+- Payment is a single boolean value
+- No partial or advance payments
+- Payment status must be clearly visible everywhere
+- Pending payment events should be easy to identify and filter
+
+APPLICATION PAGES & FLOW
+
+1. DASHBOARD
+Purpose: Quick overview
+
+- Today’s events
+- Upcoming events
+- Pending payments count
+- Simple cards optimized for mobile
+- Tap card → navigate to details
+
+2. EVENTS (MAIN LIST)
+Purpose: View and manage all events
+
+- List view (default)
+- Optional calendar-style overview for clarity
+- Filters:
+  - Date range
+  - Event type
+  - Payment status (Paid / Pending)
+- Each event card shows:
+  - Customer name
+  - Event type
+  - Date(s)
+  - Time
+  - Payment badge
+
+3. ADD / EDIT EVENT
+Purpose: Create or update event booking
+
+- Step-by-step mobile-friendly form
+- Customer selection (searchable dropdown)
+- Event type selection
+- Date range picker (start_date → end_date)
+- Time picker (start_time → end_time)
+- Real-time availability validation
+- Location input
+- Price input
+- Payment status toggle
+- Optional image upload
+- Save / Update action
+
+4. EVENT DETAILS
+Purpose: View full event information
+
+- All event details in readable layout
+- Image gallery (if available)
+- Payment status clearly highlighted
+- Edit button
+
+5. PENDING PAYMENTS
+Purpose: Track unpaid events
+
+- List of all events where payment_status = false
+- Shows:
+  - Customer name
+  - Event date(s)
+  - Amount
+- Quick action to mark payment as received
+
+6. CUSTOMER MASTER
+Purpose: Manage customers
+
+- List customers
+- Add / Edit customer
+- Used across event creation
+
+7. EVENT TYPE MASTER
+Purpose: Manage event types
+
+- List event types
+- Add / Edit event types
+
+UI / UX REQUIREMENTS
+
+DESIGN PRINCIPLES
+- Mobile-first, touch-friendly
+- Simple and distraction-free
+- Fast navigation
+- Clear visual hierarchy
+
+NAVIGATION
+- Bottom navigation bar (similar to Shopify mobile app)
+- Suggested tabs:
+  - Dashboard
+  - Events
+  - Add Event
+  - Payments
+  - Settings / Masters
+
+UI ELEMENTS
+- Large buttons
+- Status badges (Paid / Pending)
+- Clean cards
+- Smooth transitions
+- Minimal colors with strong contrast
+
+NON-FUNCTIONAL REQUIREMENTS
+- Fast load times
+- Simple logic
+- Clean database schema
+- Easy to extend later
+- Reliable validation
+
+OUT OF SCOPE (FOR NOW)
+- Online payments
+- Partial payments
+- Customer login
+- Invoicing / GST
+- Notifications
+- Reports & analytics
+
+GOAL
+To provide a simple, reliable, mobile-first internal tool to manage event bookings, schedules, and payment tracking with minimal complexity and smooth user experience.
