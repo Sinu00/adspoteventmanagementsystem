@@ -14,9 +14,9 @@ export function formatTime(time: string | null | undefined): string {
     return "N/A";
   }
   
+  const timeStr = time.trim();
+  
   try {
-    const timeStr = time.trim();
-    
     // Handle different time formats from database
     // PostgreSQL TIME returns "HH:mm:ss" or "HH:mm:ss.sss" format
     // Extract just the HH:mm part if seconds are present
