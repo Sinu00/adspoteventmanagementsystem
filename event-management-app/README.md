@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Event Management System
 
-## Getting Started
+A mobile-first internal event management web application built for small teams to manage event bookings, customers, schedules, and payment status.
 
-First, run the development server:
+## Tech Stack
+
+- **Frontend**: Next.js 16 (App Router)
+- **Backend/Database/Auth**: Supabase
+- **Styling**: Tailwind CSS (Mobile-first)
+- **Deployment**: Vercel
+
+## Features
+
+- ✅ Authentication with Supabase Auth
+- ✅ Dashboard with today's events, upcoming events, and pending payments
+- ✅ Event management with conflict detection
+- ✅ Customer master management
+- ✅ Event type master management
+- ✅ Payment tracking
+- ✅ Mobile-first responsive design
+- ✅ Bottom navigation bar
+
+## Setup Instructions
+
+### 1. Install Dependencies
+
+```bash
+npm install
+```
+
+### 2. Set Up Supabase
+
+1. Create a new project at [supabase.com](https://supabase.com)
+2. Go to SQL Editor and run the SQL script from `database-schema.sql`
+3. Go to Settings > API and copy your project URL and anon key
+
+### 3. Configure Environment Variables
+
+Create a `.env.local` file in the root directory:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+### 4. Create Users
+
+1. Go to Supabase Dashboard > Authentication > Users
+2. Manually create 2-3 internal users with email and password
+3. These users will be able to log in to the application
+
+### 5. Run the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Database Schema
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The application uses three main tables:
 
-## Learn More
+1. **customers** - Stores customer information
+2. **event_types** - Defines types of events (Marriage, Birthday, etc.)
+3. **event_bookings** - Stores event bookings with dates, times, prices, and payment status
 
-To learn more about Next.js, take a look at the following resources:
+See `database-schema.sql` for the complete schema with indexes and Row Level Security policies.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Key Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Event Conflict Detection
 
-## Deploy on Vercel
+The system automatically detects scheduling conflicts:
+- Events cannot overlap in time on the same date
+- Real-time validation when creating/editing events
+- Clear error messages when conflicts are detected
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Payment Tracking
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Simple boolean payment status (Paid/Pending)
+- Quick access to all pending payments
+- One-click payment status update
+
+### Mobile-First Design
+
+- Optimized for mobile devices
+- Touch-friendly interface
+- Bottom navigation bar
+- Responsive layout for tablets and desktops
+
+## Project Structure
+
+```
+app/
+  ├── auth/login/          # Login page
+  ├── dashboard/            # Dashboard with overview
+  ├── events/              # Events list, details, add/edit
+  ├── payments/            # Pending payments page
+  └── settings/            # Settings and master data management
+components/                 # Reusable components
+lib/                       # Utilities and Supabase clients
+```
+
+## Deployment
+
+The application is ready to deploy on Vercel:
+
+1. Push your code to GitHub
+2. Import the project in Vercel
+3. Add environment variables in Vercel dashboard
+4. Deploy!
+
+## Notes
+
+- This is an internal tool, not customer-facing
+- All users have the same permissions
+- No public signup - users must be created manually in Supabase
+- Image upload functionality is prepared but not fully implemented (images field exists in schema)
