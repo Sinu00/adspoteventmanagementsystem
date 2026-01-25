@@ -257,7 +257,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-6 rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-6 shadow-[0_1px_3px_rgba(0,0,0,0.1)]"
+      className="space-y-6 rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-6 shadow-[0_1px_3px_rgba(0,0,0,0.1)] w-full max-w-full overflow-hidden"
     >
       {error && (
         <div className="flex items-center gap-2 rounded-lg bg-red-50 border border-red-200 p-4 text-sm text-red-800">
@@ -275,12 +275,12 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
 
       {/* Customer Selection with Inline Creation */}
       <div>
-        <label className="mb-2 block text-sm font-semibold text-gray-700">
+        <label className="mb-2 block text-[13px] font-medium text-[#1F2937]">
           <User size={16} className="inline mr-1.5" />
           Customer *
         </label>
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-[#6B7280]" size={18} strokeWidth={2} />
           <input
             type="text"
             value={searchQuery}
@@ -290,7 +290,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
             }}
             onFocus={() => setShowCustomerDropdown(true)}
             placeholder="Search customer by name or phone..."
-            className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] pl-10 pr-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
+            className="w-full max-w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] pl-10 pr-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20 box-border"
           />
           {showCustomerDropdown && (
             <div className="absolute z-10 mt-1 w-full overflow-auto rounded-lg border border-gray-200 bg-white shadow-xl max-h-60">
@@ -357,14 +357,14 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
                 value={newCustomer.name}
                 onChange={(e) => setNewCustomer({ ...newCustomer, name: e.target.value })}
                 placeholder="Customer Name *"
-                className="w-full rounded-[16px] border border-[#FCD34D] bg-white px-3 py-3 text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
+                className="w-full max-w-full rounded-[16px] border border-[#FCD34D] bg-white px-3 py-3 text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20 box-border"
               />
               <input
                 type="tel"
                 value={newCustomer.phone}
                 onChange={(e) => setNewCustomer({ ...newCustomer, phone: e.target.value })}
                 placeholder="Mobile Number *"
-                className="w-full rounded-[16px] border border-[#FCD34D] bg-white px-3 py-3 text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
+                className="w-full max-w-full rounded-[16px] border border-[#FCD34D] bg-white px-3 py-3 text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20 box-border"
               />
               <button
                 type="button"
@@ -389,7 +389,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
 
       {/* Event Type */}
       <div>
-        <label className="mb-2 block text-sm font-semibold text-gray-700">
+        <label className="mb-2 block text-[13px] font-medium text-[#1F2937]">
           <Tag size={16} className="inline mr-1.5" />
           Event Type *
         </label>
@@ -397,7 +397,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
           required
           value={formData.event_type_id}
           onChange={(e) => setFormData({ ...formData, event_type_id: e.target.value })}
-          className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
+          className="w-full max-w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20 box-border"
         >
           <option value="">Select event type</option>
           {eventTypes.map((type) => (
@@ -410,20 +410,20 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
 
       {/* Title */}
       <div>
-        <label className="mb-2 block text-sm font-semibold text-gray-700">Title *</label>
+        <label className="mb-2 block text-[13px] font-medium text-[#1F2937]">Title *</label>
         <input
           type="text"
           required
           value={formData.title}
           onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-          className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
+          className="w-full max-w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20 box-border"
           placeholder="Event title or short description"
         />
       </div>
 
       {/* Date & Time with Calendar */}
       <div>
-        <label className="mb-2 block text-sm font-semibold text-gray-700">
+        <label className="mb-2 block text-[13px] font-medium text-[#1F2937]">
           <Calendar size={16} className="inline mr-1.5" />
           Date & Time *
         </label>
@@ -436,7 +436,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
               setShowCalendar(!showCalendar);
               setCalendarMode("start");
             }}
-            className="text-sm text-blue-600 hover:text-blue-700 font-medium"
+            className="text-sm text-[#FCD34D] hover:text-[#FDE68A] font-medium transition-colors duration-200"
           >
             {showCalendar ? "Hide Calendar" : "Show Calendar"}
           </button>
@@ -467,7 +467,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
 
         {/* Start Date & Time */}
         <div className="mb-4">
-          <label className="mb-2 block text-xs font-medium text-gray-600">Start Date & Time *</label>
+          <label className="mb-2 block text-[13px] font-medium text-[#1F2937]">Start Date & Time *</label>
           <input
             type="datetime-local"
             required
@@ -479,27 +479,27 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
                 setFormData({ ...formData, start_datetime: e.target.value, end_datetime: e.target.value });
               }
             }}
-            className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
+            className="w-full max-w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20 box-border"
           />
         </div>
 
         {/* End Date & Time */}
         <div>
-          <label className="mb-2 block text-xs font-medium text-[#6B7280]">End Date & Time *</label>
+          <label className="mb-2 block text-[13px] font-medium text-[#1F2937]">End Date & Time *</label>
           <input
             type="datetime-local"
             required
             value={formData.end_datetime}
             min={formData.start_datetime}
             onChange={(e) => setFormData({ ...formData, end_datetime: e.target.value })}
-            className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
+            className="w-full max-w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20 box-border"
           />
         </div>
       </div>
 
       {/* Location */}
       <div>
-        <label className="mb-2 block text-sm font-semibold text-gray-700">
+        <label className="mb-2 block text-[13px] font-medium text-[#1F2937]">
           <MapPin size={16} className="inline mr-1.5" />
           Location *
         </label>
@@ -508,14 +508,14 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
           required
           value={formData.location}
           onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-          className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
+          className="w-full max-w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20 box-border"
           placeholder="Event location"
         />
       </div>
 
       {/* Price */}
       <div>
-        <label className="mb-2 block text-sm font-semibold text-gray-700">
+        <label className="mb-2 block text-[13px] font-medium text-[#1F2937]">
           <IndianRupee size={16} className="inline mr-1.5" />
           Total Price (₹) *
         </label>
@@ -549,35 +549,35 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
               setFormData({ ...formData, total_price: numValue });
             }
           }}
-          className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
+          className="w-full max-w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20 box-border"
           placeholder="0.00"
         />
       </div>
 
       {/* Payment Status */}
-      <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
+      <div className="rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] p-4">
         <label className="flex cursor-pointer items-center gap-3">
           <input
             type="checkbox"
             checked={formData.payment_status}
             onChange={(e) => setFormData({ ...formData, payment_status: e.target.checked })}
-            className="h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-2 focus:ring-blue-500"
+            className="h-5 w-5 rounded border-[#E5E7EB] text-[#FCD34D] focus:ring-2 focus:ring-[#FCD34D]"
           />
           <div>
-            <span className="text-sm font-semibold text-gray-700">Payment Received</span>
-            <p className="text-xs text-gray-500">Mark this if payment has been collected</p>
+            <span className="text-sm font-medium text-[#1F2937]">Payment Received</span>
+            <p className="text-xs text-[#6B7280]">Mark this if payment has been collected</p>
           </div>
         </label>
       </div>
 
       {/* Notes */}
       <div>
-        <label className="mb-2 block text-sm font-semibold text-gray-700">Notes</label>
+        <label className="mb-2 block text-[13px] font-medium text-[#1F2937]">Notes</label>
         <textarea
           value={formData.notes}
           onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
           rows={4}
-          className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
+          className="w-full max-w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20 box-border resize-none"
           placeholder="Additional notes..."
         />
       </div>

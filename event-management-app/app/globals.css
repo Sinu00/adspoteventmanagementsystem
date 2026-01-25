@@ -23,6 +23,21 @@ body {
   box-sizing: border-box;
 }
 
+/* Ensure form inputs don't overflow */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 /* Safe area insets for iOS devices */
 .safe-area-pb {
   padding-bottom: calc(1rem + env(safe-area-inset-bottom));
