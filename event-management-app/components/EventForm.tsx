@@ -290,7 +290,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
             }}
             onFocus={() => setShowCustomerDropdown(true)}
             placeholder="Search customer by name or phone..."
-            className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] pl-10 pr-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
+            className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] pl-10 pr-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
           />
           {showCustomerDropdown && (
             <div className="absolute z-10 mt-1 w-full overflow-auto rounded-lg border border-gray-200 bg-white shadow-xl max-h-60">
@@ -357,20 +357,20 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
                 value={newCustomer.name}
                 onChange={(e) => setNewCustomer({ ...newCustomer, name: e.target.value })}
                 placeholder="Customer Name *"
-                className="w-full rounded-[16px] border border-[#A78BFA] bg-white px-3 py-3 text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
+                className="w-full rounded-[16px] border border-[#FCD34D] bg-white px-3 py-3 text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
               />
               <input
                 type="tel"
                 value={newCustomer.phone}
                 onChange={(e) => setNewCustomer({ ...newCustomer, phone: e.target.value })}
                 placeholder="Mobile Number *"
-                className="w-full rounded-[16px] border border-[#A78BFA] bg-white px-3 py-3 text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
+                className="w-full rounded-[16px] border border-[#FCD34D] bg-white px-3 py-3 text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
               />
               <button
                 type="button"
                 onClick={handleCreateCustomer}
                 disabled={creatingCustomer}
-                className="w-full rounded-[20px] bg-[#A78BFA] h-11 px-4 text-sm font-medium text-white transition-all duration-200 hover:bg-[#C4B5FD] disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
+                className="w-full rounded-[20px] bg-[#FCD34D] h-11 px-4 text-sm font-medium text-[#1F2937] transition-all duration-200 hover:bg-[#FDE68A] disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
               >
                 {creatingCustomer ? "Creating..." : "Create Customer"}
               </button>
@@ -397,7 +397,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
           required
           value={formData.event_type_id}
           onChange={(e) => setFormData({ ...formData, event_type_id: e.target.value })}
-          className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
+          className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
         >
           <option value="">Select event type</option>
           {eventTypes.map((type) => (
@@ -416,7 +416,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
           required
           value={formData.title}
           onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-          className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
+          className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
           placeholder="Event title or short description"
         />
       </div>
@@ -479,7 +479,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
                 setFormData({ ...formData, start_datetime: e.target.value, end_datetime: e.target.value });
               }
             }}
-            className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
+            className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
           />
         </div>
 
@@ -492,7 +492,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
             value={formData.end_datetime}
             min={formData.start_datetime}
             onChange={(e) => setFormData({ ...formData, end_datetime: e.target.value })}
-            className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
+            className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
           />
         </div>
       </div>
@@ -508,7 +508,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
           required
           value={formData.location}
           onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-          className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
+          className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
           placeholder="Event location"
         />
       </div>
@@ -549,7 +549,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
               setFormData({ ...formData, total_price: numValue });
             }
           }}
-          className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
+          className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
           placeholder="0.00"
         />
       </div>
@@ -577,7 +577,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
           value={formData.notes}
           onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
           rows={4}
-          className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
+          className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
           placeholder="Additional notes..."
         />
       </div>
@@ -587,7 +587,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
         <button
           type="submit"
           disabled={loading || !!conflictError}
-          className="flex-1 rounded-[20px] bg-[#A78BFA] h-11 px-6 text-base font-medium text-white shadow-sm transition-all duration-200 hover:bg-[#C4B5FD] focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
+          className="flex-1 rounded-[20px] bg-[#FCD34D] h-11 px-6 text-base font-medium text-[#1F2937] shadow-sm transition-all duration-200 hover:bg-[#FDE68A] focus:outline-none focus:ring-2 focus:ring-[#FCD34D] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
         >
           {loading ? "Saving..." : event ? "Update Event" : "Create Event"}
         </button>

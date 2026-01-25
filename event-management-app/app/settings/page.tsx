@@ -28,11 +28,11 @@ export default async function SettingsPage() {
         <div className="space-y-4">
           <Link
             href="/settings/customers"
-            className="group block rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-200 hover:shadow-md hover:border-[#A78BFA]"
+            className="group block rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-200 hover:shadow-md hover:border-[#FCD34D]"
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="rounded-xl bg-gradient-to-br from-[#A78BFA] to-[#C4B5FD] p-3">
+                <div className="rounded-xl bg-gradient-to-br from-[#FCD34D] to-[#FDE68A] p-3">
                   <Users className="text-white" size={24} strokeWidth={2} />
                 </div>
                 <div>
@@ -40,7 +40,7 @@ export default async function SettingsPage() {
                   <p className="mt-1 text-sm text-[#6B7280]">Manage customers</p>
                 </div>
               </div>
-              <div className="text-[#6B7280] group-hover:text-[#A78BFA] transition-colors duration-200">
+              <div className="text-[#6B7280] group-hover:text-[#FCD34D] transition-colors duration-200">
                 →
               </div>
             </div>
@@ -48,11 +48,11 @@ export default async function SettingsPage() {
 
           <Link
             href="/settings/event-types"
-            className="group block rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-200 hover:shadow-md hover:border-[#A78BFA]"
+            className="group block rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-200 hover:shadow-md hover:border-[#FCD34D]"
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="rounded-xl bg-gradient-to-br from-[#A78BFA] to-[#C4B5FD] p-3">
+                <div className="rounded-xl bg-gradient-to-br from-[#FCD34D] to-[#FDE68A] p-3">
                   <Tag className="text-white" size={24} strokeWidth={2} />
                 </div>
                 <div>
@@ -60,17 +60,17 @@ export default async function SettingsPage() {
                   <p className="mt-1 text-sm text-[#6B7280]">Manage event types</p>
                 </div>
               </div>
-              <div className="text-[#6B7280] group-hover:text-[#A78BFA] transition-colors duration-200">→</div>
+              <div className="text-[#6B7280] group-hover:text-[#FCD34D] transition-colors duration-200">→</div>
             </div>
           </Link>
 
           <Link
             href="/settings/event-limits"
-            className="group block rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-200 hover:shadow-md hover:border-[#A78BFA]"
+            className="group block rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-200 hover:shadow-md hover:border-[#FCD34D]"
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="rounded-xl bg-gradient-to-br from-[#A78BFA] to-[#C4B5FD] p-3">
+                <div className="rounded-xl bg-gradient-to-br from-[#FCD34D] to-[#FDE68A] p-3">
                   <Calendar className="text-white" size={24} strokeWidth={2} />
                 </div>
                 <div>
@@ -78,7 +78,7 @@ export default async function SettingsPage() {
                   <p className="mt-1 text-sm text-[#6B7280]">Configure maximum events per day</p>
                 </div>
               </div>
-              <div className="text-[#6B7280] group-hover:text-[#A78BFA] transition-colors duration-200">→</div>
+              <div className="text-[#6B7280] group-hover:text-[#FCD34D] transition-colors duration-200">→</div>
             </div>
           </Link>
 

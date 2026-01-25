@@ -73,7 +73,7 @@ export default async function EventsPage({
           <h1 className="text-[24px] font-semibold text-[#1F2937]">Events</h1>
           <Link
             href="/events/new"
-            className="flex items-center gap-2 rounded-[20px] bg-[#A78BFA] px-4 h-11 text-sm font-medium text-white shadow-sm transition-all duration-200 hover:bg-[#C4B5FD] active:scale-95"
+            className="flex items-center gap-2 rounded-[20px] bg-[#FCD34D] px-4 h-11 text-sm font-medium text-[#1F2937] shadow-sm transition-all duration-200 hover:bg-[#FDE68A] active:scale-95"
           >
             <Plus size={18} strokeWidth={2} />
             Add Event

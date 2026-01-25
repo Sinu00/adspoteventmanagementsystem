@@ -9,13 +9,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Event Management",
+  title: "Adspot Event Management System",
   description: "Internal event management system",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Event Management",
+    title: "Adspot EMS",
   },
   viewport: {
     width: "device-width",
@@ -32,7 +32,7 @@ export const viewport: Viewport = {
   maximumScale: 1,
   userScalable: false,
   viewportFit: "cover",
-  themeColor: "#A78BFA",
+  themeColor: "#FCD34D",
 };
 
 export default function RootLayout({
@@ -43,11 +43,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="Event Management" />
+        <meta name="apple-mobile-web-app-title" content="Adspot EMS" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="theme-color" content="#A78BFA" />
+        <meta name="theme-color" content="#FCD34D" />
       </head>
       <body className={`${inter.variable} antialiased`}>
         {children}

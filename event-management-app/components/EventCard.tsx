@@ -12,10 +12,10 @@ export default function EventCard({ event }: EventCardProps) {
 
   return (
     <Link href={`/events/${event.id}`} className="block">
-      <div className="group relative overflow-hidden rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-200 hover:shadow-md hover:border-[#A78BFA]">
+      <div className="group relative overflow-hidden rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-200 hover:shadow-md hover:border-[#FCD34D]">
         <div className="flex items-start justify-between gap-3 mb-4">
           <div className="flex-1 min-w-0">
-            <h3 className="text-[16px] font-medium text-[#1F2937] truncate group-hover:text-[#A78BFA] transition-colors mb-1">
+            <h3 className="text-[16px] font-medium text-[#1F2937] truncate group-hover:text-[#FCD34D] transition-colors mb-1">
               {event.title}
             </h3>
             <p className="text-sm font-medium text-[#1F2937] mb-0.5">

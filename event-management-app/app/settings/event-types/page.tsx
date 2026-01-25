@@ -103,7 +103,7 @@ export default function EventTypesPage() {
               setEditingEventType(null);
               setFormData({ name: "", description: "" });
             }}
-            className="flex items-center gap-2 rounded-[20px] bg-[#A78BFA] px-4 h-11 text-sm font-medium text-white shadow-sm transition-all duration-200 hover:bg-[#C4B5FD] active:scale-95"
+            className="flex items-center gap-2 rounded-[20px] bg-[#FCD34D] px-4 h-11 text-sm font-medium text-[#1F2937] shadow-sm transition-all duration-200 hover:bg-[#FDE68A] active:scale-95"
           >
             <Plus size={18} strokeWidth={2} />
             Add Event Type
@@ -135,7 +135,7 @@ export default function EventTypesPage() {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
+                  className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
                   placeholder="e.g., Marriage, Birthday, Engagement"
                 />
               </div>
@@ -145,13 +145,13 @@ export default function EventTypesPage() {
                   value={formData.description}
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                   rows={3}
-                  className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
+                  className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
                 />
               </div>
               <div className="flex gap-3 pt-2">
                 <button
                   type="submit"
-                  className="flex-1 rounded-[20px] bg-[#A78BFA] h-11 px-6 text-base font-medium text-white shadow-sm transition-all duration-200 hover:bg-[#C4B5FD] focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:ring-offset-2 active:scale-95"
+                  className="flex-1 rounded-[20px] bg-[#FCD34D] h-11 px-6 text-base font-medium text-[#1F2937] shadow-sm transition-all duration-200 hover:bg-[#FDE68A] focus:outline-none focus:ring-2 focus:ring-[#FCD34D] focus:ring-offset-2 active:scale-95"
                 >
                   {editingEventType ? "Update" : "Add Event Type"}
                 </button>
@@ -183,7 +183,7 @@ export default function EventTypesPage() {
             eventTypes.map((eventType) => (
               <div
                 key={eventType.id}
-                className="rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-200 hover:shadow-md hover:border-[#A78BFA]"
+                className="rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-200 hover:shadow-md hover:border-[#FCD34D]"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
@@ -198,7 +198,7 @@ export default function EventTypesPage() {
                   <div className="flex gap-2">
                     <button
                       onClick={() => handleEdit(eventType)}
-                      className="flex items-center gap-1.5 rounded-[20px] bg-[#A78BFA] px-3 h-9 text-sm font-medium text-white transition-all duration-200 hover:bg-[#C4B5FD] focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:ring-offset-2 active:scale-95"
+                      className="flex items-center gap-1.5 rounded-[20px] bg-[#FCD34D] px-3 h-9 text-sm font-medium text-[#1F2937] transition-all duration-200 hover:bg-[#FDE68A] focus:outline-none focus:ring-2 focus:ring-[#FCD34D] focus:ring-offset-2 active:scale-95"
                     >
                       <Edit2 size={14} strokeWidth={2} />
                       Edit

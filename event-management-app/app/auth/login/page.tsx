@@ -33,14 +33,14 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-[#A78BFA] via-[#C4B5FD] to-[#A78BFA] px-4">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-[#FCD34D] via-[#FDE68A] to-[#FCD34D] px-4">
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
-          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#A78BFA] to-[#C4B5FD] shadow-lg">
-            <Calendar className="text-white" size={32} strokeWidth={2} />
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#FCD34D] to-[#FDE68A] shadow-lg">
+            <Calendar className="text-[#1F2937]" size={32} strokeWidth={2} />
           </div>
-          <h1 className="text-3xl font-semibold text-white">Event Management</h1>
-          <p className="mt-2 text-white/90">Sign in to your account</p>
+          <h1 className="text-3xl font-semibold text-[#1F2937]">Event Management</h1>
+          <p className="mt-2 text-[#1F2937]/90">Sign in to your account</p>
         </div>
 
         <form
@@ -69,7 +69,7 @@ export default function LoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] pl-10 pr-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
+                className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] pl-10 pr-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
                 placeholder="you@example.com"
               />
             </div>
@@ -91,7 +91,7 @@ export default function LoginPage() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] pl-10 pr-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
+                className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] pl-10 pr-4 py-4 text-base transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
                 placeholder="••••••••"
               />
             </div>
@@ -100,7 +100,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-[20px] bg-[#A78BFA] h-11 px-4 text-base font-medium text-white shadow-sm transition-all duration-200 hover:bg-[#C4B5FD] focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
+            className="w-full rounded-[20px] bg-[#FCD34D] h-11 px-4 text-base font-medium text-[#1F2937] shadow-sm transition-all duration-200 hover:bg-[#FDE68A] focus:outline-none focus:ring-2 focus:ring-[#FCD34D] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
           >
             {loading ? "Signing in..." : "Sign In"}
           </button>

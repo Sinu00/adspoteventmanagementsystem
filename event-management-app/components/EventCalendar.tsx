@@ -90,7 +90,7 @@ export default function EventCalendar({
     if (startDate && endDate) {
       const dateStr = format(date, "yyyy-MM-dd");
       if (dateStr >= startDate && dateStr <= endDate) {
-        return "bg-[#A78BFA]/20 border-[#A78BFA]";
+        return "bg-[#FCD34D]/20 border-[#FCD34D]";
       }
     }
 
@@ -207,8 +207,8 @@ export default function EventCalendar({
                 className={`
                   w-full h-full rounded-lg border-2 text-sm font-medium transition-all duration-200
                   ${getDateColor(date)}
-                  ${isSelected ? "ring-2 ring-[#A78BFA] ring-offset-2 bg-[#A78BFA] text-white border-[#A78BFA]" : ""}
-                  ${isCurrentDay ? "ring-1 ring-[#A78BFA]" : ""}
+                  ${isSelected ? "ring-2 ring-[#FCD34D] ring-offset-2 bg-[#FCD34D] text-[#1F2937] border-[#FCD34D]" : ""}
+                  ${isCurrentDay ? "ring-1 ring-[#FCD34D]" : ""}
                   ${disabled ? "cursor-not-allowed" : "cursor-pointer"}
                   ${!disabled && !isSelected ? "hover:scale-105" : ""}
                 `}

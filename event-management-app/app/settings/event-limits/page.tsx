@@ -139,7 +139,7 @@ export default function EventLimitsPage() {
                   max="20"
                   value={eventLimit}
                   onChange={(e) => setEventLimit(parseInt(e.target.value, 10) || 1)}
-                  className="w-24 rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base font-semibold text-center transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
+                  className="w-24 rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base font-semibold text-center transition-all duration-200 focus:border-[#FCD34D] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#FCD34D]/20"
                 />
                 <span className="text-[#6B7280]">events per day</span>
               </div>
@@ -169,7 +169,7 @@ export default function EventLimitsPage() {
             <button
               onClick={handleSave}
               disabled={saving}
-              className="flex w-full items-center justify-center gap-2 rounded-[20px] bg-[#A78BFA] h-11 px-6 text-base font-medium text-white shadow-sm transition-all duration-200 hover:bg-[#C4B5FD] focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
+              className="flex w-full items-center justify-center gap-2 rounded-[20px] bg-[#FCD34D] h-11 px-6 text-base font-medium text-[#1F2937] shadow-sm transition-all duration-200 hover:bg-[#FDE68A] focus:outline-none focus:ring-2 focus:ring-[#FCD34D] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
             >
               <Save size={18} strokeWidth={2} />
               {saving ? "Saving..." : "Save Settings"}

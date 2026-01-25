@@ -61,14 +61,14 @@ export default async function EventDetailsPage({ params }: { params: { id: strin
         <div className="mb-6 flex items-center justify-between pt-4">
           <Link
             href="/events"
-            className="flex items-center gap-2 text-[#A78BFA] hover:text-[#C4B5FD] font-medium transition-colors duration-200"
+            className="flex items-center gap-2 text-[#FCD34D] hover:text-[#FDE68A] font-medium transition-colors duration-200"
           >
             <ArrowLeft size={18} strokeWidth={2} />
             Back to Events
           </Link>
           <Link
             href={`/events/${event.id}/edit`}
-            className="flex items-center gap-2 rounded-[20px] bg-[#A78BFA] px-4 h-11 text-sm font-medium text-white shadow-sm transition-all duration-200 hover:bg-[#C4B5FD] active:scale-95"
+            className="flex items-center gap-2 rounded-[20px] bg-[#FCD34D] px-4 h-11 text-sm font-medium text-[#1F2937] shadow-sm transition-all duration-200 hover:bg-[#FDE68A] active:scale-95"
           >
             <Edit size={16} strokeWidth={2} />
             Edit
@@ -96,7 +96,7 @@ export default async function EventDetailsPage({ params }: { params: { id: strin
 
           <div className="space-y-5">
             <div className="flex items-start gap-3">
-              <div className="rounded-lg bg-gradient-to-br from-[#A78BFA] to-[#C4B5FD] p-2.5">
+              <div className="rounded-lg bg-gradient-to-br from-[#FCD34D] to-[#FDE68A] p-2.5">
                 <User className="text-white" size={20} strokeWidth={2} />
               </div>
               <div className="flex-1">
@@ -114,7 +114,7 @@ export default async function EventDetailsPage({ params }: { params: { id: strin
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="rounded-lg bg-gradient-to-br from-[#A78BFA] to-[#C4B5FD] p-2.5">
+              <div className="rounded-lg bg-gradient-to-br from-[#FCD34D] to-[#FDE68A] p-2.5">
                 <Tag className="text-white" size={20} strokeWidth={2} />
               </div>
               <div className="flex-1">
@@ -185,7 +185,7 @@ export default async function EventDetailsPage({ params }: { params: { id: strin
 
             {event.images && event.images.length > 0 && (
               <div className="flex items-start gap-3">
-                <div className="rounded-lg bg-gradient-to-br from-[#A78BFA] to-[#C4B5FD] p-2.5">
+                <div className="rounded-lg bg-gradient-to-br from-[#FCD34D] to-[#FDE68A] p-2.5">
                   <ImageIcon className="text-white" size={20} strokeWidth={2} />
                 </div>
                 <div className="flex-1">

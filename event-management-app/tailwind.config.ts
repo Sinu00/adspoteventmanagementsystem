@@ -10,12 +10,12 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          purple: "#A78BFA",
-          "purple-secondary": "#C4B5FD",
+          yellow: "#FCD34D",
+          "yellow-secondary": "#FDE68A",
         },
         accent: {
           green: "#86EFAC",
-          yellow: "#FCD34D",
+          purple: "#A78BFA",
         },
         text: {
           primary: "#1F2937",

@@ -87,7 +87,7 @@ export default async function DashboardPage() {
             </div>
           </Link>
 
-          <div className="rounded-[16px] border border-[#E5E7EB] bg-gradient-to-br from-[#A78BFA] to-[#C4B5FD] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
+          <div className="rounded-[16px] border border-[#E5E7EB] bg-gradient-to-br from-[#FCD34D] to-[#FDE68A] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-white/90">Today's Events</p>
@@ -144,7 +144,7 @@ export default async function DashboardPage() {
             {upcomingEvents.length > 0 && (
               <Link
                 href="/events"
-                className="text-sm text-[#A78BFA] hover:text-[#C4B5FD] font-medium transition-colors duration-200"
+                className="text-sm text-[#FCD34D] hover:text-[#FDE68A] font-medium transition-colors duration-200"
               >
                 View All →
               </Link>

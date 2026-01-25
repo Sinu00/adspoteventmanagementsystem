@@ -109,7 +109,7 @@ export default function PaymentsPage() {
                   </div>
                   <button
                     onClick={() => markAsPaid(event.id)}
-                    className="flex items-center gap-2 rounded-[20px] bg-[#A78BFA] px-4 h-11 text-sm font-medium text-white shadow-sm transition-all duration-200 hover:bg-[#C4B5FD] active:scale-95 whitespace-nowrap"
+                    className="flex items-center gap-2 rounded-[20px] bg-[#FCD34D] px-4 h-11 text-sm font-medium text-[#1F2937] shadow-sm transition-all duration-200 hover:bg-[#FDE68A] active:scale-95 whitespace-nowrap"
                   >
                     <CheckCircle2 size={16} strokeWidth={2} />
                     Mark Paid
