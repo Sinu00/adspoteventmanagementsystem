@@ -79,8 +79,8 @@ export default function EventTypesPage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-[#F9FAFB] pb-20">
-        <div className="mx-auto max-w-4xl px-5 py-4">
-          <p className="text-center text-[#6B7280]">Loading...</p>
+        <div className="mx-auto max-w-4xl px-5 page-container">
+          <p className="text-center text-[#6B7280] pt-4">Loading...</p>
         </div>
         <BottomNav />
       </div>
@@ -89,8 +89,8 @@ export default function EventTypesPage() {
 
   return (
     <div className="min-h-screen bg-[#F9FAFB] pb-20">
-      <div className="mx-auto max-w-4xl px-5 py-4">
-        <div className="mb-6 flex items-center justify-between">
+      <div className="mx-auto max-w-4xl px-5 page-container">
+        <div className="mb-6 flex items-center justify-between pt-4">
           <div>
             <div className="mb-2 flex items-center gap-2">
               <Tag className="text-[#6B7280]" size={24} strokeWidth={2} />

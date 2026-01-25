@@ -32,6 +32,11 @@ body {
   padding-top: calc(1rem + env(safe-area-inset-top));
 }
 
+/* Page container with safe area top padding for Dynamic Island */
+.page-container {
+  padding-top: calc(1rem + env(safe-area-inset-top, 1rem));
+}
+
 /* Hide scrollbar but keep functionality */
 .scrollbar-hide {
   -ms-overflow-style: none;

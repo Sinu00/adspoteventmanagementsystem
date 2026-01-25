@@ -57,8 +57,8 @@ export default async function EventDetailsPage({ params }: { params: { id: strin
 
   return (
     <div className="min-h-screen bg-[#F9FAFB] pb-20">
-      <div className="mx-auto max-w-2xl px-5 py-4">
-        <div className="mb-6 flex items-center justify-between">
+      <div className="mx-auto max-w-2xl px-5 page-container">
+        <div className="mb-6 flex items-center justify-between pt-4">
           <Link
             href="/events"
             className="flex items-center gap-2 text-[#A78BFA] hover:text-[#C4B5FD] font-medium transition-colors duration-200"

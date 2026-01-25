@@ -67,9 +67,9 @@ export default async function EventsPage({
 
   return (
     <div className="min-h-screen bg-[#F9FAFB] pb-20">
-      <div className="mx-auto max-w-4xl px-5 py-4">
+      <div className="mx-auto max-w-4xl px-5 page-container">
         {/* Header */}
-        <div className="mb-6 flex h-[60px] items-center justify-between">
+        <div className="mb-6 flex h-[60px] items-center justify-between pt-4">
           <h1 className="text-[24px] font-semibold text-[#1F2937]">Events</h1>
           <Link
             href="/events/new"

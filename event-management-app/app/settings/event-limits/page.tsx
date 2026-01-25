@@ -88,8 +88,8 @@ export default function EventLimitsPage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-[#F9FAFB] pb-20">
-        <div className="mx-auto max-w-2xl px-5 py-4">
-          <div className="rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-8 text-center shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
+        <div className="mx-auto max-w-2xl px-5 page-container">
+          <div className="rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-8 text-center shadow-[0_1px_3px_rgba(0,0,0,0.1)] pt-4">
             <p className="text-[#6B7280]">Loading...</p>
           </div>
         </div>
@@ -100,8 +100,8 @@ export default function EventLimitsPage() {
 
   return (
     <div className="min-h-screen bg-[#F9FAFB] pb-20">
-      <div className="mx-auto max-w-2xl px-5 py-4">
-        <div className="mb-6">
+      <div className="mx-auto max-w-2xl px-5 page-container">
+        <div className="mb-6 pt-4">
           <div className="mb-2 flex items-center gap-2">
             <Settings className="text-[#6B7280]" size={24} strokeWidth={2} />
             <h1 className="text-[24px] font-semibold text-[#1F2937]">Event Limits</h1>
