@@ -26,7 +26,7 @@ export default function BottomNav() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="flex flex-col items-center justify-center gap-1 px-3 py-2 transition-all duration-200"
+                className="flex items-center justify-center px-3 py-2 transition-all duration-200"
               >
                 <div className={`flex items-center justify-center ${isActive ? "w-12 h-12 rounded-full bg-white" : ""}`}>
                   <Icon
@@ -35,9 +35,6 @@ export default function BottomNav() {
                     className={isActive ? "text-[#1F2937]" : "text-white"}
                   />
                 </div>
-                <span className={`text-[10px] font-medium ${isActive ? "font-semibold text-white" : "text-white"}`}>
-                  {item.label}
-                </span>
               </Link>
             );
           })}
