@@ -1,0 +1,17 @@
+{
+  "name": "Adspot Event Management System",
+  "short_name": "Adspot EMS",
+  "description": "Internal event management system",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F9FAFB",
+  "theme_color": "#A78BFA",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
