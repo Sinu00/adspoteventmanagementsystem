@@ -51,7 +51,7 @@ async function getEvents(searchParams: { [key: string]: string | string[] | unde
 export default async function EventsPage({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const supabase = await createClient();
   const {
@@ -62,7 +62,8 @@ export default async function EventsPage({
     redirect("/auth/login");
   }
 
-  const { events, eventTypes } = await getEvents(searchParams);
+  const resolvedSearchParams = await searchParams;
+  const { events, eventTypes } = await getEvents(resolvedSearchParams);
 
   return (
     <div className="min-h-screen bg-[#F9FAFB] pb-20">
@@ -79,7 +80,7 @@ export default async function EventsPage({
           </Link>
         </div>
 
-        <EventsFilters eventTypes={eventTypes} searchParams={searchParams} />
+        <EventsFilters eventTypes={eventTypes} searchParams={resolvedSearchParams} />
 
         <div className="space-y-3">
           {events.length === 0 ? (
