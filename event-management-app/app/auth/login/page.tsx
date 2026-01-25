@@ -33,34 +33,35 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-50 px-4">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-[#A78BFA] via-[#C4B5FD] to-[#A78BFA] px-4">
       <div className="w-full max-w-md">
         <div className="mb-8 text-center">
-          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 shadow-lg">
-            <Calendar className="text-white" size={32} />
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#A78BFA] to-[#C4B5FD] shadow-lg">
+            <Calendar className="text-white" size={32} strokeWidth={2} />
           </div>
-          <h1 className="text-3xl font-bold text-gray-900">Event Management</h1>
-          <p className="mt-2 text-gray-600">Sign in to your account</p>
+          <h1 className="text-3xl font-semibold text-white">Event Management</h1>
+          <p className="mt-2 text-white/90">Sign in to your account</p>
         </div>
 
         <form
           onSubmit={handleLogin}
-          className="space-y-6 rounded-2xl bg-white p-8 shadow-xl border border-gray-100"
+          className="space-y-6 rounded-2xl bg-[#FFFFFF] p-8 shadow-xl border border-[#E5E7EB]"
         >
           {error && (
-            <div className="rounded-lg bg-red-50 border border-red-200 p-4 text-sm text-red-800">
+            <div className="rounded-[16px] bg-red-50 border border-red-200 p-4 text-sm text-red-800">
               {error}
             </div>
           )}
 
           <div>
-            <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+            <label htmlFor="email" className="block text-[13px] font-medium text-[#1F2937] mb-2">
               Email Address
             </label>
             <div className="relative">
               <Mail
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-[#6B7280]"
                 size={18}
+                strokeWidth={2}
               />
               <input
                 id="email"
@@ -68,20 +69,21 @@ export default function LoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full rounded-lg border border-gray-300 bg-gray-50 pl-10 pr-4 py-3 text-base transition-all focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] pl-10 pr-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
                 placeholder="you@example.com"
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-semibold text-gray-700 mb-2">
+            <label htmlFor="password" className="block text-[13px] font-medium text-[#1F2937] mb-2">
               Password
             </label>
             <div className="relative">
               <Lock
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-[#6B7280]"
                 size={18}
+                strokeWidth={2}
               />
               <input
                 id="password"
@@ -89,7 +91,7 @@ export default function LoginPage() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full rounded-lg border border-gray-300 bg-gray-50 pl-10 pr-4 py-3 text-base transition-all focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] pl-10 pr-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
                 placeholder="••••••••"
               />
             </div>
@@ -98,7 +100,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.02] active:scale-[0.98]"
+            className="w-full rounded-[20px] bg-[#A78BFA] h-11 px-4 text-base font-medium text-white shadow-sm transition-all duration-200 hover:bg-[#C4B5FD] focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
           >
             {loading ? "Signing in..." : "Sign In"}
           </button>

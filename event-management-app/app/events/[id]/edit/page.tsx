@@ -50,11 +50,11 @@ export default async function EditEventPage({ params }: { params: { id: string }
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50/30 pb-20">
-      <div className="mx-auto max-w-2xl px-4 py-6">
+    <div className="min-h-screen bg-[#F9FAFB] pb-20">
+      <div className="mx-auto max-w-2xl px-5 py-4">
         <div className="mb-6 flex items-center gap-2">
-          <Edit className="text-gray-600" size={24} />
-          <h1 className="text-3xl font-bold text-gray-900">Edit Event</h1>
+          <Edit className="text-[#6B7280]" size={24} strokeWidth={2} />
+          <h1 className="text-[24px] font-semibold text-[#1F2937]">Edit Event</h1>
         </div>
         <EventForm
           customers={formData.customers}

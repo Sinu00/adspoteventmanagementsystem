@@ -257,7 +257,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-6 rounded-2xl border border-gray-200 bg-white p-6 shadow-xl"
+      className="space-y-6 rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-6 shadow-[0_1px_3px_rgba(0,0,0,0.1)]"
     >
       {error && (
         <div className="flex items-center gap-2 rounded-lg bg-red-50 border border-red-200 p-4 text-sm text-red-800">
@@ -290,7 +290,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
             }}
             onFocus={() => setShowCustomerDropdown(true)}
             placeholder="Search customer by name or phone..."
-            className="w-full rounded-lg border border-gray-300 bg-gray-50 pl-10 pr-4 py-3 text-base transition-all focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+            className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] pl-10 pr-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
           />
           {showCustomerDropdown && (
             <div className="absolute z-10 mt-1 w-full overflow-auto rounded-lg border border-gray-200 bg-white shadow-xl max-h-60">
@@ -357,20 +357,20 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
                 value={newCustomer.name}
                 onChange={(e) => setNewCustomer({ ...newCustomer, name: e.target.value })}
                 placeholder="Customer Name *"
-                className="w-full rounded-lg border border-blue-300 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full rounded-[16px] border border-[#A78BFA] bg-white px-3 py-3 text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
               />
               <input
                 type="tel"
                 value={newCustomer.phone}
                 onChange={(e) => setNewCustomer({ ...newCustomer, phone: e.target.value })}
                 placeholder="Mobile Number *"
-                className="w-full rounded-lg border border-blue-300 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full rounded-[16px] border border-[#A78BFA] bg-white px-3 py-3 text-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
               />
               <button
                 type="button"
                 onClick={handleCreateCustomer}
                 disabled={creatingCustomer}
-                className="w-full rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="w-full rounded-[20px] bg-[#A78BFA] h-11 px-4 text-sm font-medium text-white transition-all duration-200 hover:bg-[#C4B5FD] disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
               >
                 {creatingCustomer ? "Creating..." : "Create Customer"}
               </button>
@@ -397,7 +397,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
           required
           value={formData.event_type_id}
           onChange={(e) => setFormData({ ...formData, event_type_id: e.target.value })}
-          className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-base transition-all focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+          className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
         >
           <option value="">Select event type</option>
           {eventTypes.map((type) => (
@@ -416,7 +416,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
           required
           value={formData.title}
           onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-          className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-base transition-all focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+          className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
           placeholder="Event title or short description"
         />
       </div>
@@ -479,20 +479,20 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
                 setFormData({ ...formData, start_datetime: e.target.value, end_datetime: e.target.value });
               }
             }}
-            className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-base transition-all focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+            className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
           />
         </div>
 
         {/* End Date & Time */}
         <div>
-          <label className="mb-2 block text-xs font-medium text-gray-600">End Date & Time *</label>
+          <label className="mb-2 block text-xs font-medium text-[#6B7280]">End Date & Time *</label>
           <input
             type="datetime-local"
             required
             value={formData.end_datetime}
             min={formData.start_datetime}
             onChange={(e) => setFormData({ ...formData, end_datetime: e.target.value })}
-            className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-base transition-all focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+            className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
           />
         </div>
       </div>
@@ -508,7 +508,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
           required
           value={formData.location}
           onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-          className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-base transition-all focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+          className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
           placeholder="Event location"
         />
       </div>
@@ -527,17 +527,20 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
           value={priceInput}
           onChange={(e) => {
             const value = e.target.value;
+            // Allow empty string for clearing
             setPriceInput(value);
-            // Update formData with parsed value or 0 if empty
-            const numValue = value === "" ? 0 : parseFloat(value);
-            if (!isNaN(numValue)) {
-              setFormData({ ...formData, total_price: numValue });
+            // Only update formData if value is not empty and is a valid number
+            if (value !== "" && value !== "0") {
+              const numValue = parseFloat(value);
+              if (!isNaN(numValue) && numValue >= 0) {
+                setFormData({ ...formData, total_price: numValue });
+              }
             }
           }}
           onBlur={(e) => {
             // Ensure valid number on blur
-            const value = e.target.value;
-            if (value === "" || isNaN(parseFloat(value))) {
+            const value = e.target.value.trim();
+            if (value === "" || isNaN(parseFloat(value)) || parseFloat(value) < 0) {
               setPriceInput("");
               setFormData({ ...formData, total_price: 0 });
             } else {
@@ -546,7 +549,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
               setFormData({ ...formData, total_price: numValue });
             }
           }}
-          className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-base transition-all focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+          className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
           placeholder="0.00"
         />
       </div>
@@ -574,7 +577,7 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
           value={formData.notes}
           onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
           rows={4}
-          className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-base transition-all focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+          className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
           placeholder="Additional notes..."
         />
       </div>
@@ -584,16 +587,16 @@ export default function EventForm({ customers: initialCustomers, eventTypes, eve
         <button
           type="submit"
           disabled={loading || !!conflictError}
-          className="flex-1 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.02] active:scale-[0.98]"
+          className="flex-1 rounded-[20px] bg-[#A78BFA] h-11 px-6 text-base font-medium text-white shadow-sm transition-all duration-200 hover:bg-[#C4B5FD] focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
         >
           {loading ? "Saving..." : event ? "Update Event" : "Create Event"}
         </button>
         <button
           type="button"
           onClick={() => router.back()}
-          className="flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-6 py-3.5 text-base font-semibold text-gray-700 transition-all hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+          className="flex items-center gap-2 rounded-[20px] border border-[#E5E7EB] bg-transparent h-11 px-6 text-base font-medium text-[#1F2937] transition-all duration-200 hover:bg-[#F9FAFB] focus:outline-none focus:ring-2 focus:ring-[#E5E7EB]"
         >
-          <X size={18} />
+          <X size={18} strokeWidth={2} />
           Cancel
         </button>
       </div>

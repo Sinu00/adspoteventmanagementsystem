@@ -43,7 +43,7 @@ export function formatTime(time: string | null | undefined): string {
           return format(date, "h:mm a");
         }
       }
-      return "Invalid time";
+      return "N/A";
     }
     
     return format(parsed, "h:mm a");
@@ -54,7 +54,7 @@ export function formatTime(time: string | null | undefined): string {
       if (parts.length >= 2) {
         const hours = parseInt(parts[0], 10);
         const minutes = parseInt(parts[1], 10);
-        if (!isNaN(hours) && !isNaN(minutes)) {
+        if (!isNaN(hours) && !isNaN(minutes) && hours >= 0 && hours < 24 && minutes >= 0 && minutes < 60) {
           const date = new Date();
           date.setHours(hours, minutes, 0, 0);
           return format(date, "h:mm a");
@@ -63,7 +63,7 @@ export function formatTime(time: string | null | undefined): string {
     } catch {
       // Ignore fallback errors
     }
-    return "Invalid time";
+    return "N/A";
   }
 }
 

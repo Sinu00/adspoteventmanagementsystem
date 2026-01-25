@@ -16,32 +16,31 @@ export default async function SettingsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50/30 pb-20">
-      <div className="mx-auto max-w-2xl px-4 py-6">
+    <div className="min-h-screen bg-[#F9FAFB] pb-20">
+      <div className="mx-auto max-w-2xl px-5 py-4">
         <div className="mb-6">
           <div className="mb-2 flex items-center gap-2">
-            <SettingsIcon className="text-gray-600" size={24} />
-            <h1 className="text-3xl font-bold text-gray-900">Settings</h1>
+            <SettingsIcon className="text-[#6B7280]" size={24} strokeWidth={2} />
+            <h1 className="text-[24px] font-semibold text-[#1F2937]">Settings</h1>
           </div>
-          <p className="text-sm text-gray-600">Manage your master data and account</p>
         </div>
 
         <div className="space-y-4">
           <Link
             href="/settings/customers"
-            className="group block rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg hover:border-blue-300"
+            className="group block rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-200 hover:shadow-md hover:border-[#A78BFA]"
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="rounded-xl bg-blue-100 p-3">
-                  <Users className="text-blue-600" size={24} />
+                <div className="rounded-xl bg-gradient-to-br from-[#A78BFA] to-[#C4B5FD] p-3">
+                  <Users className="text-white" size={24} strokeWidth={2} />
                 </div>
                 <div>
-                  <h2 className="text-lg font-semibold text-gray-900">Customer Master</h2>
-                  <p className="mt-1 text-sm text-gray-600">Manage customers</p>
+                  <h2 className="text-[16px] font-medium text-[#1F2937]">Customer Master</h2>
+                  <p className="mt-1 text-sm text-[#6B7280]">Manage customers</p>
                 </div>
               </div>
-              <div className="text-gray-400 group-hover:text-blue-600 transition-colors">
+              <div className="text-[#6B7280] group-hover:text-[#A78BFA] transition-colors duration-200">
                 →
               </div>
             </div>
@@ -49,48 +48,48 @@ export default async function SettingsPage() {
 
           <Link
             href="/settings/event-types"
-            className="group block rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg hover:border-purple-300"
+            className="group block rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-200 hover:shadow-md hover:border-[#A78BFA]"
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="rounded-xl bg-purple-100 p-3">
-                  <Tag className="text-purple-600" size={24} />
+                <div className="rounded-xl bg-gradient-to-br from-[#A78BFA] to-[#C4B5FD] p-3">
+                  <Tag className="text-white" size={24} strokeWidth={2} />
                 </div>
                 <div>
-                  <h2 className="text-lg font-semibold text-gray-900">Event Type Master</h2>
-                  <p className="mt-1 text-sm text-gray-600">Manage event types</p>
+                  <h2 className="text-[16px] font-medium text-[#1F2937]">Event Type Master</h2>
+                  <p className="mt-1 text-sm text-[#6B7280]">Manage event types</p>
                 </div>
               </div>
-              <div className="text-gray-400 group-hover:text-purple-600 transition-colors">→</div>
+              <div className="text-[#6B7280] group-hover:text-[#A78BFA] transition-colors duration-200">→</div>
             </div>
           </Link>
 
           <Link
             href="/settings/event-limits"
-            className="group block rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg hover:border-orange-300"
+            className="group block rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-200 hover:shadow-md hover:border-[#A78BFA]"
           >
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="rounded-xl bg-orange-100 p-3">
-                  <Calendar className="text-orange-600" size={24} />
+                <div className="rounded-xl bg-gradient-to-br from-[#A78BFA] to-[#C4B5FD] p-3">
+                  <Calendar className="text-white" size={24} strokeWidth={2} />
                 </div>
                 <div>
-                  <h2 className="text-lg font-semibold text-gray-900">Event Limits</h2>
-                  <p className="mt-1 text-sm text-gray-600">Configure maximum events per day</p>
+                  <h2 className="text-[16px] font-medium text-[#1F2937]">Event Limits</h2>
+                  <p className="mt-1 text-sm text-[#6B7280]">Configure maximum events per day</p>
                 </div>
               </div>
-              <div className="text-gray-400 group-hover:text-orange-600 transition-colors">→</div>
+              <div className="text-[#6B7280] group-hover:text-[#A78BFA] transition-colors duration-200">→</div>
             </div>
           </Link>
 
-          <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
             <div className="mb-4 flex items-center gap-3">
               <div className="rounded-xl bg-red-100 p-3">
-                <LogOut className="text-red-600" size={24} />
+                <LogOut className="text-red-600" size={24} strokeWidth={2} />
               </div>
               <div>
-                <h2 className="text-lg font-semibold text-gray-900">Account</h2>
-                <p className="mt-1 text-sm text-gray-600">Sign out of your account</p>
+                <h2 className="text-[16px] font-medium text-[#1F2937]">Account</h2>
+                <p className="mt-1 text-sm text-[#6B7280]">Sign out of your account</p>
               </div>
             </div>
             <LogoutButton />

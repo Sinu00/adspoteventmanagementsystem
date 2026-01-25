@@ -90,18 +90,18 @@ export default function EventCalendar({
     if (startDate && endDate) {
       const dateStr = format(date, "yyyy-MM-dd");
       if (dateStr >= startDate && dateStr <= endDate) {
-        return "bg-blue-100 border-blue-400";
+        return "bg-[#A78BFA]/20 border-[#A78BFA]";
       }
     }
 
     if (count === 0) {
-      return "bg-green-50 border-green-200 hover:bg-green-100";
+      return "bg-[#86EFAC]/20 border-[#86EFAC] hover:bg-[#86EFAC]/30";
     } else if (count >= eventLimit) {
       return "bg-red-100 border-red-300 text-red-700 cursor-not-allowed opacity-60";
     } else if (count >= 2) {
-      return "bg-orange-50 border-orange-200 hover:bg-orange-100";
+      return "bg-[#FCD34D]/20 border-[#FCD34D] hover:bg-[#FCD34D]/30";
     } else {
-      return "bg-green-50 border-green-200 hover:bg-green-100";
+      return "bg-[#86EFAC]/20 border-[#86EFAC] hover:bg-[#86EFAC]/30";
     }
   };
 
@@ -145,7 +145,7 @@ export default function EventCalendar({
   };
 
   return (
-    <div className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+    <div className="rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
       {/* Calendar Header */}
       <div className="mb-4 flex items-center justify-between">
         <button
@@ -205,10 +205,10 @@ export default function EventCalendar({
                 onClick={() => handleDateClick(date)}
                 disabled={disabled}
                 className={`
-                  w-full h-full rounded-lg border-2 text-sm font-medium transition-all
+                  w-full h-full rounded-lg border-2 text-sm font-medium transition-all duration-200
                   ${getDateColor(date)}
-                  ${isSelected ? "ring-2 ring-blue-500 ring-offset-2" : ""}
-                  ${isCurrentDay ? "ring-1 ring-blue-300" : ""}
+                  ${isSelected ? "ring-2 ring-[#A78BFA] ring-offset-2 bg-[#A78BFA] text-white border-[#A78BFA]" : ""}
+                  ${isCurrentDay ? "ring-1 ring-[#A78BFA]" : ""}
                   ${disabled ? "cursor-not-allowed" : "cursor-pointer"}
                   ${!disabled && !isSelected ? "hover:scale-105" : ""}
                 `}
@@ -228,19 +228,19 @@ export default function EventCalendar({
       </div>
 
       {/* Legend */}
-      <div className="mt-4 pt-4 border-t border-gray-200">
+      <div className="mt-4 pt-4 border-t border-[#E5E7EB]">
         <div className="flex flex-wrap items-center gap-4 text-xs">
           <div className="flex items-center gap-2">
-            <div className="w-4 h-4 rounded bg-green-50 border border-green-200"></div>
-            <span className="text-gray-600">0-1 events</span>
+            <div className="w-4 h-4 rounded bg-[#86EFAC]/20 border border-[#86EFAC]"></div>
+            <span className="text-[#6B7280]">0-1 events</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-4 h-4 rounded bg-orange-50 border border-orange-200"></div>
-            <span className="text-gray-600">2-3 events</span>
+            <div className="w-4 h-4 rounded bg-[#FCD34D]/20 border border-[#FCD34D]"></div>
+            <span className="text-[#6B7280]">2-3 events</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-4 h-4 rounded bg-red-100 border border-red-300"></div>
-            <span className="text-gray-600">{eventLimit}+ events (unavailable)</span>
+            <span className="text-[#6B7280]">{eventLimit}+ events (unavailable)</span>
           </div>
         </div>
       </div>

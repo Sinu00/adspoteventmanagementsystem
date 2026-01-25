@@ -65,49 +65,48 @@ export default async function DashboardPage() {
   const { todayEvents, upcomingEvents, pendingCount } = await getDashboardData();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50/30 pb-20">
-      <div className="mx-auto max-w-4xl px-4 py-6">
+    <div className="min-h-screen bg-[#F9FAFB] pb-20">
+      <div className="mx-auto max-w-4xl px-5 py-4">
         <div className="mb-6">
-          <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-          <p className="mt-1 text-sm text-gray-600">Welcome back! Here's your overview</p>
+          <h1 className="text-[24px] font-semibold text-[#1F2937]">Dashboard</h1>
         </div>
 
         {/* Stats Cards */}
         <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
           <Link href="/payments">
-            <div className="group relative overflow-hidden rounded-xl border border-amber-200 bg-gradient-to-br from-amber-50 to-orange-50 p-5 shadow-sm transition-all hover:shadow-md hover:scale-[1.02]">
+            <div className="group relative overflow-hidden rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-200 hover:shadow-md active:scale-[0.95]">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-amber-700">Pending Payments</p>
-                  <p className="mt-2 text-3xl font-bold text-amber-900">{pendingCount}</p>
+                  <p className="text-sm font-medium text-[#6B7280]">Pending Payments</p>
+                  <p className="mt-2 text-3xl font-bold text-[#1F2937]">{pendingCount}</p>
                 </div>
-                <div className="rounded-full bg-amber-100 p-3">
-                  <DollarSign className="text-amber-600" size={24} />
+                <div className="rounded-full bg-[#FCD34D]/20 p-3">
+                  <DollarSign className="text-[#1F2937]" size={24} strokeWidth={2} />
                 </div>
               </div>
             </div>
           </Link>
 
-          <div className="rounded-xl border border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 p-5 shadow-sm">
+          <div className="rounded-[16px] border border-[#E5E7EB] bg-gradient-to-br from-[#A78BFA] to-[#C4B5FD] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-blue-700">Today's Events</p>
-                <p className="mt-2 text-3xl font-bold text-blue-900">{todayEvents.length}</p>
+                <p className="text-sm font-medium text-white/90">Today's Events</p>
+                <p className="mt-2 text-3xl font-bold text-white">{todayEvents.length}</p>
               </div>
-              <div className="rounded-full bg-blue-100 p-3">
-                <Calendar className="text-blue-600" size={24} />
+              <div className="rounded-full bg-white/20 p-3">
+                <Calendar className="text-white" size={24} strokeWidth={2} />
               </div>
             </div>
           </div>
 
-          <div className="rounded-xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-teal-50 p-5 shadow-sm">
+          <div className="rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-emerald-700">Upcoming</p>
-                <p className="mt-2 text-3xl font-bold text-emerald-900">{upcomingEvents.length}</p>
+                <p className="text-sm font-medium text-[#6B7280]">Upcoming</p>
+                <p className="mt-2 text-3xl font-bold text-[#1F2937]">{upcomingEvents.length}</p>
               </div>
-              <div className="rounded-full bg-emerald-100 p-3">
-                <TrendingUp className="text-emerald-600" size={24} />
+              <div className="rounded-full bg-[#86EFAC]/20 p-3">
+                <TrendingUp className="text-[#1F2937]" size={24} strokeWidth={2} />
               </div>
             </div>
           </div>
@@ -116,15 +115,15 @@ export default async function DashboardPage() {
         {/* Today's Events */}
         <div className="mb-6">
           <div className="mb-4 flex items-center gap-2">
-            <Calendar className="text-gray-600" size={20} />
-            <h2 className="text-xl font-bold text-gray-900">
+            <Calendar className="text-[#6B7280]" size={20} strokeWidth={2} />
+            <h2 className="text-[20px] font-semibold text-[#1F2937]">
               Today's Events ({formatDate(new Date())})
             </h2>
           </div>
           {todayEvents.length === 0 ? (
-            <div className="rounded-xl border border-gray-200 bg-white p-8 text-center shadow-sm">
-              <AlertCircle className="mx-auto text-gray-400" size={32} />
-              <p className="mt-3 text-gray-500">No events scheduled for today</p>
+            <div className="rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-8 text-center shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
+              <AlertCircle className="mx-auto text-[#6B7280]" size={32} strokeWidth={2} />
+              <p className="mt-3 text-[#6B7280]">No events scheduled for today</p>
             </div>
           ) : (
             <div className="space-y-3">
@@ -136,15 +135,25 @@ export default async function DashboardPage() {
         </div>
 
         {/* Upcoming Events */}
-        <div>
-          <div className="mb-4 flex items-center gap-2">
-            <TrendingUp className="text-gray-600" size={20} />
-            <h2 className="text-xl font-bold text-gray-900">Upcoming Events</h2>
+        <div className="mb-6">
+          <div className="mb-4 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <TrendingUp className="text-[#6B7280]" size={20} strokeWidth={2} />
+              <h2 className="text-[20px] font-semibold text-[#1F2937]">Upcoming Events</h2>
+            </div>
+            {upcomingEvents.length > 0 && (
+              <Link
+                href="/events"
+                className="text-sm text-[#A78BFA] hover:text-[#C4B5FD] font-medium transition-colors duration-200"
+              >
+                View All →
+              </Link>
+            )}
           </div>
           {upcomingEvents.length === 0 ? (
-            <div className="rounded-xl border border-gray-200 bg-white p-8 text-center shadow-sm">
-              <AlertCircle className="mx-auto text-gray-400" size={32} />
-              <p className="mt-3 text-gray-500">No upcoming events</p>
+            <div className="rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-8 text-center shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
+              <AlertCircle className="mx-auto text-[#6B7280]" size={32} strokeWidth={2} />
+              <p className="mt-3 text-[#6B7280]">No upcoming events</p>
             </div>
           ) : (
             <div className="space-y-3">

@@ -50,9 +50,9 @@ export default function PaymentsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50/30 pb-20">
-        <div className="mx-auto max-w-4xl px-4 py-6">
-          <p className="text-center text-gray-500">Loading...</p>
+      <div className="min-h-screen bg-[#F9FAFB] pb-20">
+        <div className="mx-auto max-w-4xl px-5 py-4">
+          <p className="text-center text-[#6B7280]">Loading...</p>
         </div>
         <BottomNav />
       </div>
@@ -60,58 +60,58 @@ export default function PaymentsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50/30 pb-20">
-      <div className="mx-auto max-w-4xl px-4 py-6">
+    <div className="min-h-screen bg-[#F9FAFB] pb-20">
+      <div className="mx-auto max-w-4xl px-5 py-4">
         <div className="mb-6">
           <div className="mb-2 flex items-center gap-2">
-            <DollarSign className="text-gray-600" size={24} />
-            <h1 className="text-3xl font-bold text-gray-900">Pending Payments</h1>
+            <DollarSign className="text-[#6B7280]" size={24} strokeWidth={2} />
+            <h1 className="text-[24px] font-semibold text-[#1F2937]">Pending Payments</h1>
           </div>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-[#6B7280]">
             {events.length} {events.length === 1 ? "payment" : "payments"} pending
           </p>
         </div>
 
         {events.length === 0 ? (
-          <div className="rounded-xl border border-gray-200 bg-white p-12 text-center shadow-sm">
-            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100">
-              <CheckCircle2 className="text-emerald-600" size={32} />
+          <div className="rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-12 text-center shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#86EFAC]/20">
+              <CheckCircle2 className="text-[#1F2937]" size={32} strokeWidth={2} />
             </div>
-            <p className="text-lg font-semibold text-gray-900">All caught up!</p>
-            <p className="mt-1 text-sm text-gray-500">No pending payments</p>
+            <p className="text-lg font-semibold text-[#1F2937]">All caught up!</p>
+            <p className="mt-1 text-sm text-[#6B7280]">No pending payments</p>
           </div>
         ) : (
           <div className="space-y-3">
             {events.map((event) => (
               <div
                 key={event.id}
-                className="group rounded-xl border border-amber-200 bg-gradient-to-br from-amber-50 to-orange-50 p-5 shadow-sm transition-all hover:shadow-md"
+                className="group rounded-[16px] border border-[#FCD34D] bg-[#FCD34D]/10 p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-200 hover:shadow-md"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900">{event.title}</h3>
-                    <p className="mt-1 text-sm font-medium text-gray-700">
+                    <h3 className="text-[16px] font-medium text-[#1F2937]">{event.title}</h3>
+                    <p className="mt-1 text-sm font-medium text-[#1F2937]">
                       {event.customer?.name || "Unknown Customer"}
                     </p>
-                    <p className="mt-0.5 text-xs text-gray-500">
+                    <p className="mt-0.5 text-xs text-[#6B7280]">
                       {event.event_type?.name || "Unknown Type"}
                     </p>
                     <div className="mt-3 flex items-center gap-4">
-                      <div className="flex items-center gap-1.5 text-sm text-gray-600">
-                        <Calendar size={16} className="text-gray-400" />
+                      <div className="flex items-center gap-1.5 text-sm text-[#6B7280]">
+                        <Calendar size={16} strokeWidth={2} className="text-[#6B7280]" />
                         <span>{getDateRange(event.start_date, event.end_date)}</span>
                       </div>
-                      <div className="flex items-center gap-1.5 text-base font-bold text-gray-900">
-                        <IndianRupee size={18} />
+                      <div className="flex items-center gap-1.5 text-base font-bold text-[#1F2937]">
+                        <IndianRupee size={18} strokeWidth={2} />
                         <span>{event.total_price.toLocaleString("en-IN")}</span>
                       </div>
                     </div>
                   </div>
                   <button
                     onClick={() => markAsPaid(event.id)}
-                    className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-emerald-600 to-teal-600 px-4 py-2.5 text-sm font-semibold text-white shadow-lg transition-all hover:from-emerald-700 hover:to-teal-700 hover:shadow-xl transform hover:scale-105 active:scale-95 whitespace-nowrap"
+                    className="flex items-center gap-2 rounded-[20px] bg-[#A78BFA] px-4 h-11 text-sm font-medium text-white shadow-sm transition-all duration-200 hover:bg-[#C4B5FD] active:scale-95 whitespace-nowrap"
                   >
-                    <CheckCircle2 size={16} />
+                    <CheckCircle2 size={16} strokeWidth={2} />
                     Mark Paid
                   </button>
                 </div>

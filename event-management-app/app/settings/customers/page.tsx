@@ -82,9 +82,9 @@ export default function CustomersPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50/30 pb-20">
-        <div className="mx-auto max-w-4xl px-4 py-6">
-          <p className="text-center text-gray-500">Loading...</p>
+      <div className="min-h-screen bg-[#F9FAFB] pb-20">
+        <div className="mx-auto max-w-4xl px-5 py-4">
+          <p className="text-center text-[#6B7280]">Loading...</p>
         </div>
         <BottomNav />
       </div>
@@ -92,15 +92,14 @@ export default function CustomersPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50/30 pb-20">
-      <div className="mx-auto max-w-4xl px-4 py-6">
+    <div className="min-h-screen bg-[#F9FAFB] pb-20">
+      <div className="mx-auto max-w-4xl px-5 py-4">
         <div className="mb-6 flex items-center justify-between">
           <div>
             <div className="mb-2 flex items-center gap-2">
-              <Users className="text-gray-600" size={24} />
-              <h1 className="text-3xl font-bold text-gray-900">Customers</h1>
+              <Users className="text-[#6B7280]" size={24} strokeWidth={2} />
+              <h1 className="text-[24px] font-semibold text-[#1F2937]">Customers</h1>
             </div>
-            <p className="text-sm text-gray-600">Manage your customer database</p>
           </div>
           <button
             onClick={() => {
@@ -108,17 +107,17 @@ export default function CustomersPage() {
               setEditingCustomer(null);
               setFormData({ name: "", phone: "", email: "", notes: "" });
             }}
-            className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-lg transition-all hover:from-blue-700 hover:to-indigo-700 transform hover:scale-105 active:scale-95"
+            className="flex items-center gap-2 rounded-[20px] bg-[#A78BFA] px-4 h-11 text-sm font-medium text-white shadow-sm transition-all duration-200 hover:bg-[#C4B5FD] active:scale-95"
           >
-            <Plus size={18} />
+            <Plus size={18} strokeWidth={2} />
             Add Customer
           </button>
         </div>
 
         {showForm && (
-          <div className="mb-6 rounded-2xl border border-gray-200 bg-white p-6 shadow-xl">
+          <div className="mb-6 rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-6 shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-xl font-bold text-gray-900">
+              <h2 className="text-[20px] font-semibold text-[#1F2937]">
                 {editingCustomer ? "Edit Customer" : "Add Customer"}
               </h2>
               <button
@@ -127,54 +126,54 @@ export default function CustomersPage() {
                   setEditingCustomer(null);
                   setFormData({ name: "", phone: "", email: "", notes: "" });
                 }}
-                className="rounded-lg p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors"
+                className="rounded-lg p-1.5 text-[#6B7280] hover:bg-[#F9FAFB] hover:text-[#1F2937] transition-colors duration-200"
               >
-                <X size={20} />
+                <X size={20} strokeWidth={2} />
               </button>
             </div>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="mb-2 block text-sm font-semibold text-gray-700">Name *</label>
+                <label className="mb-2 block text-[13px] font-medium text-[#1F2937]">Name *</label>
                 <input
                   type="text"
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-base transition-all focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                  className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
                 />
               </div>
               <div>
-                <label className="mb-2 block text-sm font-semibold text-gray-700">Phone *</label>
+                <label className="mb-2 block text-[13px] font-medium text-[#1F2937]">Phone *</label>
                 <input
                   type="tel"
                   required
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-base transition-all focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                  className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
                 />
               </div>
               <div>
-                <label className="mb-2 block text-sm font-semibold text-gray-700">Email</label>
+                <label className="mb-2 block text-[13px] font-medium text-[#1F2937]">Email</label>
                 <input
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-base transition-all focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                  className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
                 />
               </div>
               <div>
-                <label className="mb-2 block text-sm font-semibold text-gray-700">Notes</label>
+                <label className="mb-2 block text-[13px] font-medium text-[#1F2937]">Notes</label>
                 <textarea
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                   rows={3}
-                  className="w-full rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-base transition-all focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                  className="w-full rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
                 />
               </div>
               <div className="flex gap-3 pt-2">
                 <button
                   type="submit"
-                  className="flex-1 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 text-base font-semibold text-white shadow-lg transition-all hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transform hover:scale-[1.02] active:scale-[0.98]"
+                  className="flex-1 rounded-[20px] bg-[#A78BFA] h-11 px-6 text-base font-medium text-white shadow-sm transition-all duration-200 hover:bg-[#C4B5FD] focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:ring-offset-2 active:scale-95"
                 >
                   {editingCustomer ? "Update" : "Add Customer"}
                 </button>
@@ -185,9 +184,9 @@ export default function CustomersPage() {
                     setEditingCustomer(null);
                     setFormData({ name: "", phone: "", email: "", notes: "" });
                   }}
-                  className="flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-6 py-3 text-base font-semibold text-gray-700 transition-all hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                  className="flex items-center gap-2 rounded-[20px] border border-[#E5E7EB] bg-transparent h-11 px-6 text-base font-medium text-[#1F2937] transition-all duration-200 hover:bg-[#F9FAFB] focus:outline-none focus:ring-2 focus:ring-[#E5E7EB]"
                 >
-                  <X size={18} />
+                  <X size={18} strokeWidth={2} />
                   Cancel
                 </button>
               </div>
@@ -197,34 +196,34 @@ export default function CustomersPage() {
 
         <div className="space-y-3">
           {customers.length === 0 ? (
-            <div className="rounded-xl border border-gray-200 bg-white p-12 text-center shadow-sm">
-              <Users className="mx-auto text-gray-400" size={48} />
-              <p className="mt-4 text-gray-500 font-medium">No customers found</p>
-              <p className="mt-1 text-sm text-gray-400">Add your first customer to get started</p>
+            <div className="rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-12 text-center shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
+              <Users className="mx-auto text-[#6B7280]" size={48} strokeWidth={2} />
+              <p className="mt-4 text-[#1F2937] font-medium">No customers found</p>
+              <p className="mt-1 text-sm text-[#6B7280]">Add your first customer to get started</p>
             </div>
           ) : (
             customers.map((customer) => (
               <div
                 key={customer.id}
-                className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-all hover:shadow-md hover:border-blue-200"
+                className="rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-200 hover:shadow-md hover:border-[#A78BFA]"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900">{customer.name}</h3>
+                    <h3 className="text-[16px] font-medium text-[#1F2937]">{customer.name}</h3>
                     <div className="mt-2 space-y-1">
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <Phone size={14} className="text-gray-400" />
+                      <div className="flex items-center gap-2 text-sm text-[#6B7280]">
+                        <Phone size={14} strokeWidth={2} className="text-[#6B7280]" />
                         <span>{customer.phone}</span>
                       </div>
                       {customer.email && (
-                        <div className="flex items-center gap-2 text-sm text-gray-600">
-                          <Mail size={14} className="text-gray-400" />
+                        <div className="flex items-center gap-2 text-sm text-[#6B7280]">
+                          <Mail size={14} strokeWidth={2} className="text-[#6B7280]" />
                           <span>{customer.email}</span>
                         </div>
                       )}
                       {customer.notes && (
-                        <div className="flex items-start gap-2 text-sm text-gray-500 mt-2">
-                          <FileText size={14} className="text-gray-400 mt-0.5" />
+                        <div className="flex items-start gap-2 text-sm text-[#6B7280] mt-2">
+                          <FileText size={14} strokeWidth={2} className="text-[#6B7280] mt-0.5" />
                           <span>{customer.notes}</span>
                         </div>
                       )}
@@ -233,16 +232,16 @@ export default function CustomersPage() {
                   <div className="flex gap-2">
                     <button
                       onClick={() => handleEdit(customer)}
-                      className="flex items-center gap-1.5 rounded-lg bg-blue-600 px-3 py-2 text-sm font-semibold text-white transition-all hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                      className="flex items-center gap-1.5 rounded-[20px] bg-[#A78BFA] px-3 h-9 text-sm font-medium text-white transition-all duration-200 hover:bg-[#C4B5FD] focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:ring-offset-2 active:scale-95"
                     >
-                      <Edit2 size={14} />
+                      <Edit2 size={14} strokeWidth={2} />
                       Edit
                     </button>
                     <button
                       onClick={() => handleDelete(customer.id)}
-                      className="flex items-center gap-1.5 rounded-lg bg-red-600 px-3 py-2 text-sm font-semibold text-white transition-all hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                      className="flex items-center gap-1.5 rounded-[20px] bg-red-600 px-3 h-9 text-sm font-medium text-white transition-all duration-200 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 active:scale-95"
                     >
-                      <Trash2 size={14} />
+                      <Trash2 size={14} strokeWidth={2} />
                       Delete
                     </button>
                   </div>

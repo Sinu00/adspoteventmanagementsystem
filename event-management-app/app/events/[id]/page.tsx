@@ -56,39 +56,39 @@ export default async function EventDetailsPage({ params }: { params: { id: strin
   const isPaid = event.payment_status;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50/30 pb-20">
-      <div className="mx-auto max-w-2xl px-4 py-6">
+    <div className="min-h-screen bg-[#F9FAFB] pb-20">
+      <div className="mx-auto max-w-2xl px-5 py-4">
         <div className="mb-6 flex items-center justify-between">
           <Link
             href="/events"
-            className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
+            className="flex items-center gap-2 text-[#A78BFA] hover:text-[#C4B5FD] font-medium transition-colors duration-200"
           >
-            <ArrowLeft size={18} />
+            <ArrowLeft size={18} strokeWidth={2} />
             Back to Events
           </Link>
           <Link
             href={`/events/${event.id}/edit`}
-            className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:from-blue-700 hover:to-indigo-700 transform hover:scale-105 active:scale-95"
+            className="flex items-center gap-2 rounded-[20px] bg-[#A78BFA] px-4 h-11 text-sm font-medium text-white shadow-sm transition-all duration-200 hover:bg-[#C4B5FD] active:scale-95"
           >
-            <Edit size={16} />
+            <Edit size={16} strokeWidth={2} />
             Edit
           </Link>
         </div>
 
-        <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-xl">
+        <div className="rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-6 shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
           <div className="mb-6 flex items-start justify-between">
-            <h1 className="text-2xl font-bold text-gray-900">{event.title}</h1>
+            <h1 className="text-[20px] font-semibold text-[#1F2937]">{event.title}</h1>
             <div
-              className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold whitespace-nowrap ${
+              className={`flex items-center gap-1.5 rounded-[12px] px-2 py-1.5 text-xs font-semibold whitespace-nowrap ${
                 isPaid
-                  ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
-                  : "bg-amber-50 text-amber-700 border border-amber-200"
+                  ? "bg-[#86EFAC] text-[#1F2937]"
+                  : "bg-[#FCD34D] text-[#1F2937]"
               }`}
             >
               {isPaid ? (
-                <CheckCircle2 size={14} className="stroke-[2.5]" />
+                <CheckCircle2 size={14} strokeWidth={2} />
               ) : (
-                <XCircle size={14} className="stroke-[2.5]" />
+                <XCircle size={14} strokeWidth={2} />
               )}
               {isPaid ? "Paid" : "Pending"}
             </div>
@@ -96,76 +96,76 @@ export default async function EventDetailsPage({ params }: { params: { id: strin
 
           <div className="space-y-5">
             <div className="flex items-start gap-3">
-              <div className="rounded-lg bg-blue-50 p-2.5">
-                <User className="text-blue-600" size={20} />
+              <div className="rounded-lg bg-gradient-to-br from-[#A78BFA] to-[#C4B5FD] p-2.5">
+                <User className="text-white" size={20} strokeWidth={2} />
               </div>
               <div className="flex-1">
-                <h3 className="text-sm font-semibold text-gray-500">Customer</h3>
-                <p className="mt-1 text-base font-semibold text-gray-900">
+                <h3 className="text-[13px] font-medium text-[#6B7280]">Customer</h3>
+                <p className="mt-1 text-base font-medium text-[#1F2937]">
                   {event.customer?.name || "N/A"}
                 </p>
                 {event.customer?.phone && (
-                  <p className="mt-0.5 text-sm text-gray-600">{event.customer.phone}</p>
+                  <p className="mt-0.5 text-sm text-[#6B7280]">{event.customer.phone}</p>
                 )}
                 {event.customer?.email && (
-                  <p className="mt-0.5 text-sm text-gray-600">{event.customer.email}</p>
+                  <p className="mt-0.5 text-sm text-[#6B7280]">{event.customer.email}</p>
                 )}
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="rounded-lg bg-purple-50 p-2.5">
-                <Tag className="text-purple-600" size={20} />
+              <div className="rounded-lg bg-gradient-to-br from-[#A78BFA] to-[#C4B5FD] p-2.5">
+                <Tag className="text-white" size={20} strokeWidth={2} />
               </div>
               <div className="flex-1">
-                <h3 className="text-sm font-semibold text-gray-500">Event Type</h3>
-                <p className="mt-1 text-base font-semibold text-gray-900">
+                <h3 className="text-[13px] font-medium text-[#6B7280]">Event Type</h3>
+                <p className="mt-1 text-base font-medium text-[#1F2937]">
                   {event.event_type?.name || "N/A"}
                 </p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="rounded-lg bg-emerald-50 p-2.5">
-                <Calendar className="text-emerald-600" size={20} />
+              <div className="rounded-lg bg-[#86EFAC]/20 p-2.5">
+                <Calendar className="text-[#1F2937]" size={20} strokeWidth={2} />
               </div>
               <div className="flex-1">
-                <h3 className="text-sm font-semibold text-gray-500">Date</h3>
-                <p className="mt-1 text-base font-semibold text-gray-900">
+                <h3 className="text-[13px] font-medium text-[#6B7280]">Date</h3>
+                <p className="mt-1 text-base font-medium text-[#1F2937]">
                   {getDateRange(event.start_date, event.end_date)}
                 </p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="rounded-lg bg-orange-50 p-2.5">
-                <Clock className="text-orange-600" size={20} />
+              <div className="rounded-lg bg-[#FCD34D]/20 p-2.5">
+                <Clock className="text-[#1F2937]" size={20} strokeWidth={2} />
               </div>
               <div className="flex-1">
-                <h3 className="text-sm font-semibold text-gray-500">Time</h3>
-                <p className="mt-1 text-base font-semibold text-gray-900">
+                <h3 className="text-[13px] font-medium text-[#6B7280]">Time</h3>
+                <p className="mt-1 text-base font-medium text-[#1F2937]">
                   {getTimeRange(event.start_time, event.end_time)}
                 </p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="rounded-lg bg-red-50 p-2.5">
-                <MapPin className="text-red-600" size={20} />
+              <div className="rounded-lg bg-[#E5E7EB] p-2.5">
+                <MapPin className="text-[#1F2937]" size={20} strokeWidth={2} />
               </div>
               <div className="flex-1">
-                <h3 className="text-sm font-semibold text-gray-500">Location</h3>
-                <p className="mt-1 text-base font-semibold text-gray-900">{event.location}</p>
+                <h3 className="text-[13px] font-medium text-[#6B7280]">Location</h3>
+                <p className="mt-1 text-base font-medium text-[#1F2937]">{event.location}</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="rounded-lg bg-amber-50 p-2.5">
-                <IndianRupee className="text-amber-600" size={20} />
+              <div className="rounded-lg bg-[#FCD34D]/20 p-2.5">
+                <IndianRupee className="text-[#1F2937]" size={20} strokeWidth={2} />
               </div>
               <div className="flex-1">
-                <h3 className="text-sm font-semibold text-gray-500">Total Price</h3>
-                <p className="mt-1 text-3xl font-bold text-gray-900">
+                <h3 className="text-[13px] font-medium text-[#6B7280]">Total Price</h3>
+                <p className="mt-1 text-3xl font-bold text-[#1F2937]">
                   ₹{event.total_price.toLocaleString("en-IN")}
                 </p>
               </div>
@@ -173,30 +173,30 @@ export default async function EventDetailsPage({ params }: { params: { id: strin
 
             {event.notes && (
               <div className="flex items-start gap-3">
-                <div className="rounded-lg bg-gray-50 p-2.5">
-                  <FileText className="text-gray-600" size={20} />
+                <div className="rounded-lg bg-[#E5E7EB] p-2.5">
+                  <FileText className="text-[#1F2937]" size={20} strokeWidth={2} />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-sm font-semibold text-gray-500">Notes</h3>
-                  <p className="mt-1 text-base text-gray-900 whitespace-pre-wrap">{event.notes}</p>
+                  <h3 className="text-[13px] font-medium text-[#6B7280]">Notes</h3>
+                  <p className="mt-1 text-base text-[#1F2937] whitespace-pre-wrap">{event.notes}</p>
                 </div>
               </div>
             )}
 
             {event.images && event.images.length > 0 && (
               <div className="flex items-start gap-3">
-                <div className="rounded-lg bg-indigo-50 p-2.5">
-                  <ImageIcon className="text-indigo-600" size={20} />
+                <div className="rounded-lg bg-gradient-to-br from-[#A78BFA] to-[#C4B5FD] p-2.5">
+                  <ImageIcon className="text-white" size={20} strokeWidth={2} />
                 </div>
                 <div className="flex-1">
-                  <h3 className="mb-3 text-sm font-semibold text-gray-500">Images</h3>
+                  <h3 className="mb-3 text-[13px] font-medium text-[#6B7280]">Images</h3>
                   <div className="grid grid-cols-2 gap-4">
                     {event.images.map((image, index) => (
                       <img
                         key={index}
                         src={image}
                         alt={`Event image ${index + 1}`}
-                        className="rounded-lg object-cover shadow-md"
+                        className="rounded-[16px] object-cover shadow-[0_1px_3px_rgba(0,0,0,0.1)]"
                       />
                     ))}
                   </div>

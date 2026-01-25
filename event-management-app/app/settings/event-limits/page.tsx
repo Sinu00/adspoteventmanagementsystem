@@ -87,10 +87,10 @@ export default function EventLimitsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50/30 pb-20">
-        <div className="mx-auto max-w-2xl px-4 py-6">
-          <div className="rounded-xl border border-gray-200 bg-white p-8 text-center">
-            <p className="text-gray-500">Loading...</p>
+      <div className="min-h-screen bg-[#F9FAFB] pb-20">
+        <div className="mx-auto max-w-2xl px-5 py-4">
+          <div className="rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-8 text-center shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
+            <p className="text-[#6B7280]">Loading...</p>
           </div>
         </div>
         <BottomNav />
@@ -99,17 +99,16 @@ export default function EventLimitsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50/30 pb-20">
-      <div className="mx-auto max-w-2xl px-4 py-6">
+    <div className="min-h-screen bg-[#F9FAFB] pb-20">
+      <div className="mx-auto max-w-2xl px-5 py-4">
         <div className="mb-6">
           <div className="mb-2 flex items-center gap-2">
-            <Settings className="text-gray-600" size={24} />
-            <h1 className="text-3xl font-bold text-gray-900">Event Limits</h1>
+            <Settings className="text-[#6B7280]" size={24} strokeWidth={2} />
+            <h1 className="text-[24px] font-semibold text-[#1F2937]">Event Limits</h1>
           </div>
-          <p className="text-sm text-gray-600">Configure maximum events per day</p>
         </div>
 
-        <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+        <div className="rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-6 shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
           {error && (
             <div className="mb-4 flex items-center gap-2 rounded-lg bg-red-50 border border-red-200 p-4 text-sm text-red-800">
               <AlertCircle size={18} />
@@ -140,27 +139,27 @@ export default function EventLimitsPage() {
                   max="20"
                   value={eventLimit}
                   onChange={(e) => setEventLimit(parseInt(e.target.value, 10) || 1)}
-                  className="w-24 rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 text-base font-semibold text-center transition-all focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20"
+                  className="w-24 rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] px-4 py-4 text-base font-semibold text-center transition-all duration-200 focus:border-[#A78BFA] focus:bg-[#FFFFFF] focus:outline-none focus:ring-2 focus:ring-[#A78BFA]/20"
                 />
-                <span className="text-gray-600">events per day</span>
+                <span className="text-[#6B7280]">events per day</span>
               </div>
             </div>
 
             {/* Color Legend */}
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-              <h3 className="mb-3 text-sm font-semibold text-gray-700">Calendar Color Guide</h3>
+            <div className="rounded-[16px] border border-[#E5E7EB] bg-[#F9FAFB] p-4">
+              <h3 className="mb-3 text-sm font-medium text-[#1F2937]">Calendar Color Guide</h3>
               <div className="space-y-2 text-xs">
                 <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded bg-green-50 border border-green-200"></div>
-                  <span className="text-gray-600">0-1 events (Available)</span>
+                  <div className="w-6 h-6 rounded bg-[#86EFAC]/20 border border-[#86EFAC]"></div>
+                  <span className="text-[#6B7280]">0-1 events (Available)</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded bg-orange-50 border border-orange-200"></div>
-                  <span className="text-gray-600">2-3 events (Limited availability)</span>
+                  <div className="w-6 h-6 rounded bg-[#FCD34D]/20 border border-[#FCD34D]"></div>
+                  <span className="text-[#6B7280]">2-3 events (Limited availability)</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-6 h-6 rounded bg-red-100 border border-red-300"></div>
-                  <span className="text-gray-600">
+                  <span className="text-[#6B7280]">
                     {eventLimit}+ events (Unavailable - cannot select)
                   </span>
                 </div>
@@ -170,9 +169,9 @@ export default function EventLimitsPage() {
             <button
               onClick={handleSave}
               disabled={saving}
-              className="flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.02] active:scale-[0.98]"
+              className="flex w-full items-center justify-center gap-2 rounded-[20px] bg-[#A78BFA] h-11 px-6 text-base font-medium text-white shadow-sm transition-all duration-200 hover:bg-[#C4B5FD] focus:outline-none focus:ring-2 focus:ring-[#A78BFA] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95"
             >
-              <Save size={18} />
+              <Save size={18} strokeWidth={2} />
               {saving ? "Saving..." : "Save Settings"}
             </button>
           </div>

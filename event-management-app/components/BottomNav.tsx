@@ -16,31 +16,32 @@ export default function BottomNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-gray-200/80 bg-white/95 backdrop-blur-sm shadow-lg">
-      <div className="flex h-16 items-center justify-around safe-area-pb">
-        {navItems.map((item) => {
-          const isActive = pathname === item.href || pathname?.startsWith(item.href + "/");
-          const Icon = item.icon;
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`flex flex-col items-center justify-center gap-1 px-3 py-2 transition-all duration-200 ${
-                isActive
-                  ? "text-blue-600"
-                  : "text-gray-500 hover:text-gray-700"
-              }`}
-            >
-              <Icon
-                size={22}
-                className={isActive ? "stroke-[2.5]" : "stroke-2"}
-              />
-              <span className={`text-[10px] font-medium ${isActive ? "font-semibold" : ""}`}>
-                {item.label}
-              </span>
-            </Link>
-          );
-        })}
+    <nav className="fixed bottom-0 left-0 right-0 z-50 flex items-end justify-center pb-4 safe-area-pb">
+      <div className="mx-4 rounded-full bg-[#1F2937] shadow-[0_-2px_10px_rgba(0,0,0,0.1)]">
+        <div className="flex h-[70px] items-center justify-around px-2">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href || pathname?.startsWith(item.href + "/");
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="flex flex-col items-center justify-center gap-1 px-3 py-2 transition-all duration-200"
+              >
+                <div className={`flex items-center justify-center ${isActive ? "w-12 h-12 rounded-full bg-white" : ""}`}>
+                  <Icon
+                    size={24}
+                    strokeWidth={2}
+                    className={isActive ? "text-[#1F2937]" : "text-white"}
+                  />
+                </div>
+                <span className={`text-[10px] font-medium ${isActive ? "font-semibold text-white" : "text-white"}`}>
+                  {item.label}
+                </span>
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </nav>
   );

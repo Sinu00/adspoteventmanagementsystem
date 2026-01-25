@@ -11,52 +11,52 @@ export default function EventCard({ event }: EventCardProps) {
   const isPaid = event.payment_status;
 
   return (
-    <Link href={`/events/${event.id}`}>
-      <div className="group relative overflow-hidden rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-200 hover:shadow-lg hover:border-blue-200">
-        <div className="flex items-start justify-between gap-3">
+    <Link href={`/events/${event.id}`} className="block">
+      <div className="group relative overflow-hidden rounded-[16px] border border-[#E5E7EB] bg-[#FFFFFF] p-4 shadow-[0_1px_3px_rgba(0,0,0,0.1)] transition-all duration-200 hover:shadow-md hover:border-[#A78BFA]">
+        <div className="flex items-start justify-between gap-3 mb-4">
           <div className="flex-1 min-w-0">
-            <h3 className="text-lg font-semibold text-gray-900 truncate group-hover:text-blue-600 transition-colors">
+            <h3 className="text-[16px] font-medium text-[#1F2937] truncate group-hover:text-[#A78BFA] transition-colors mb-1">
               {event.title}
             </h3>
-            <p className="mt-1 text-sm font-medium text-gray-700">
+            <p className="text-sm font-medium text-[#1F2937] mb-0.5">
               {event.customer?.name || "Unknown Customer"}
             </p>
-            <p className="mt-0.5 text-xs text-gray-500">
+            <p className="text-xs text-[#6B7280]">
               {event.event_type?.name || "Unknown Type"}
             </p>
           </div>
           <div
-            className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold whitespace-nowrap ${
+            className={`flex items-center gap-1.5 rounded-[12px] px-2 py-1.5 text-xs font-semibold whitespace-nowrap shrink-0 ${
               isPaid
-                ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
-                : "bg-amber-50 text-amber-700 border border-amber-200"
+                ? "bg-[#86EFAC] text-[#1F2937]"
+                : "bg-[#FCD34D] text-[#1F2937]"
             }`}
           >
             {isPaid ? (
-              <CheckCircle2 size={14} className="stroke-[2.5]" />
+              <CheckCircle2 size={14} strokeWidth={2} />
             ) : (
-              <XCircle size={14} className="stroke-[2.5]" />
+              <XCircle size={14} strokeWidth={2} />
             )}
             {isPaid ? "Paid" : "Pending"}
           </div>
         </div>
 
-        <div className="mt-4 space-y-2.5">
-          <div className="flex items-center gap-2 text-sm text-gray-600">
-            <Calendar size={16} className="text-gray-400" />
-            <span>{getDateRange(event.start_date, event.end_date)}</span>
+        <div className="space-y-2.5 border-t border-[#E5E7EB] pt-4">
+          <div className="flex items-center gap-2 text-sm text-[#6B7280]">
+            <Calendar size={16} strokeWidth={2} className="text-[#6B7280] shrink-0" />
+            <span className="truncate">{getDateRange(event.start_date, event.end_date)}</span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-gray-600">
-            <Clock size={16} className="text-gray-400" />
-            <span>{getTimeRange(event.start_time, event.end_time)}</span>
+          <div className="flex items-center gap-2 text-sm text-[#6B7280]">
+            <Clock size={16} strokeWidth={2} className="text-[#6B7280] shrink-0" />
+            <span className="truncate">{getTimeRange(event.start_time, event.end_time)}</span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-gray-600">
-            <MapPin size={16} className="text-gray-400" />
+          <div className="flex items-center gap-2 text-sm text-[#6B7280]">
+            <MapPin size={16} strokeWidth={2} className="text-[#6B7280] shrink-0" />
             <span className="truncate">{event.location}</span>
           </div>
-          <div className="flex items-center gap-2 pt-1">
-            <IndianRupee size={18} className="text-gray-700" />
-            <span className="text-base font-bold text-gray-900">
+          <div className="flex items-center gap-2 pt-2 border-t border-[#E5E7EB]">
+            <IndianRupee size={18} strokeWidth={2} className="text-[#1F2937] shrink-0" />
+            <span className="text-base font-bold text-[#1F2937]">
               {event.total_price.toLocaleString("en-IN")}
             </span>
           </div>
